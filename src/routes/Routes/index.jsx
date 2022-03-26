@@ -7,6 +7,7 @@ import NotFound from "../../pages/NotFound";
 import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
+import App from '../../Recipes/App'
 import {
   CircularProgress,
   makeStyles,
@@ -35,6 +36,9 @@ function AppRoutes() {
           </PrivateRoute>
         }
       />
+      <Route path="/Recipes" element={<App />}>
+        
+      </Route>
       <Route
         path="/login"
         element={

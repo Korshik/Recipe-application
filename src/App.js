@@ -1,7 +1,6 @@
 import {
   AppBar,
-  Toolbar,
-  Typography,
+  Toolbar,  
   Button,
   makeStyles,
 } from "@material-ui/core";
@@ -36,9 +35,7 @@ function App() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Real App
-          </Typography>
+         
           <div className={classes.rightToolbar}>
             <Button color="inherit" component={Link} to="/">
               Home
@@ -47,6 +44,7 @@ function App() {
           {auth.isLoaded &&
             (auth.user ? (
               <>
+                <Button color="inherit" component={Link} to="/Recipes">Recipes</Button>
                 <Button color="inherit" component={Link} to="/profile">
                   {auth.user.firstName} {auth.user.lastName}
                 </Button>
