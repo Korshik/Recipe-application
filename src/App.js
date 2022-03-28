@@ -3,15 +3,19 @@ import {
   Toolbar,  
   Button,
   makeStyles,
+  
 } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 import Routes from "./routes/Routes";
 import useAuth from "./hooks/useAuth";
+import './App.css';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   rightToolbar: {
     flexGrow: 1,
@@ -19,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: theme.spacing(2),
   },
-}));
+  
+  }));
 
 function App() {
   const classes = useStyles();
@@ -33,8 +38,8 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar className="app-bar" position="static" style={ {backgroundColor: 'rgba(81,80,79,1)'}}>
+        <Toolbar >
          
           <div className={classes.rightToolbar}>
             <Button color="inherit" component={Link} to="/">

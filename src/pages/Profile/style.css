@@ -1,0 +1,17 @@
+.profile-background{
+    background-image: url(../Profile/images/pexels-mikhail-nilov-6740535.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding-top:40px;
+  
+}
+.profile-form{
+    
+    background: rgba(209, 208, 205, 0.5);
+}
+.form-header{
+    color:azure;
+}

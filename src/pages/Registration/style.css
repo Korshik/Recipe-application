@@ -1,0 +1,13 @@
+.registration-background{
+    background-image: url(../Registration/images/pexels-monica-turlui-7218637.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+   height: 100vh;
+}
+.registration-header{
+    color: azure;
+  
+}
+    

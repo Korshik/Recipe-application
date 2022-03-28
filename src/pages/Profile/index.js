@@ -2,7 +2,6 @@ import { useForm, Controller } from "react-hook-form";
 import {
   TextField,
   Grid,
-  makeStyles,
   Container,
   Button,
   Typography,
@@ -13,15 +12,12 @@ import validationSchema from "./validation";
 import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
 import { useCallback, useEffect, useState } from "react";
+import './style.css'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(3),
-  },
-}));
+
 
 function Profile() {
-  const classes = useStyles();
+  
   const auth = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -71,10 +67,13 @@ function Profile() {
   }, [loadData]);
 
   return (
-    <Container maxWidth="xs" className={classes.root}>
+    <Container maxWidth='xl' >
+    <div className="profile-background">
+    <Container  maxWidth="xs" className="profile-form">
+    
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h6">Update profile</Typography>
+          <Typography className="form-header" variant="h6">Update profile</Typography>
         </Grid>
       </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -118,7 +117,7 @@ function Profile() {
           <Grid item xs={12}>
             <Button
               variant="contained"
-              color="primary"
+              color="default"
               type="submit"
               disabled={isLoading}
             >
@@ -133,6 +132,9 @@ function Profile() {
         onClose={() => setIsOpen(false)}
         message="Profile updated successfully"
       />
+      
+    </Container>
+    </div>
     </Container>
   );
 }

@@ -13,14 +13,17 @@ import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import './style.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(3),
+    paddingTop:theme.spacing(10)
   },
   buttonSpacing: {
     marginLeft: theme.spacing(1),
   },
+  
 }));
 
 function Login() {
@@ -59,10 +62,12 @@ function Login() {
   };
 
   return (
+    <Container maxWidth='xl'>
+    <div className="login-background">
     <Container maxWidth="xs" className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h6">Login</Typography>
+          <Typography className="login-header" variant="h6">Login</Typography>
         </Grid>
       </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,6 +94,7 @@ function Login() {
           <Grid item xs={12}>
             <Controller
               name="password"
+              autoComplete="on" 
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -96,6 +102,7 @@ function Login() {
                   {...field}
                   error={Boolean(errors.password?.message)}
                   type="password"
+                  autoComplete="on" 
                   fullWidth={true}
                   label="Password"
                   variant="filled"
@@ -105,16 +112,17 @@ function Login() {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button
+            <Button 
               variant="contained"
-              color="primary"
+              color="default"
               type="submit"
               disabled={isLoading}
             >
               Login
             </Button>
             <Button
-              color="inherit"
+            variant="contained"
+              color="default"
               type="submit"
               className={classes.buttonSpacing}
               component={Link}
@@ -125,6 +133,8 @@ function Login() {
           </Grid>
         </Grid>
       </form>
+    </Container>
+    </div>
     </Container>
   );
 }

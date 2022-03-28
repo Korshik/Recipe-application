@@ -13,6 +13,7 @@ import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import './style.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonSpacing: {
     marginLeft: theme.spacing(1),
+    marginTop: theme.spacing(2)
   },
 }));
 
@@ -59,10 +61,12 @@ function Registration() {
   };
 
   return (
+    <Container maxWidth='xl' >
+    <div className="registration-background">
     <Container maxWidth="xs" className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid className="registration-container" container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h6">Create new account</Typography>
+          <Typography className="registration-header" variant="h6">Create new account</Typography>
         </Grid>
       </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -135,6 +139,7 @@ function Registration() {
                   fullWidth={true}
                   label="Password"
                   variant="filled"
+                  autoComplete="on" 
                   helperText={errors.password?.message}
                 />
               )}
@@ -143,14 +148,15 @@ function Registration() {
           <Grid item xs={12}>
             <Button
               variant="contained"
-              color="primary"
+              color="default"
               type="submit"
               disabled={isLoading}
             >
               Registration
             </Button>
             <Button
-              color="inherit"
+              variant="contained"
+              color="default"
               type="submit"
               className={classes.buttonSpacing}
               component={Link}
@@ -161,6 +167,8 @@ function Registration() {
           </Grid>
         </Grid>
       </form>
+    </Container>
+    </div>
     </Container>
   );
 }
