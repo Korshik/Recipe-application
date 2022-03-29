@@ -3,10 +3,13 @@ import './style.css';
  
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(1.5),
+    padding: theme.spacing(0),
   
     
   },
+  Container: {
+    padding: theme.spacing(0)
+  }
 }));
 
 function Home() {

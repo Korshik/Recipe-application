@@ -67,7 +67,7 @@ function Profile() {
   }, [loadData]);
 
   return (
-    <Container maxWidth='xl' >
+    <Container className="profile-container" maxWidth='xl' >
     <div className="profile-background">
     <Container  maxWidth="xs" className="profile-form">
     

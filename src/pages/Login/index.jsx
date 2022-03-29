@@ -17,8 +17,8 @@ import './style.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(3),
-    paddingTop:theme.spacing(10)
+    padding: theme.spacing(0),
+    paddingTop:theme.spacing(0)
   },
   buttonSpacing: {
     marginLeft: theme.spacing(1),
@@ -62,7 +62,7 @@ function Login() {
   };
 
   return (
-    <Container maxWidth='xl'>
+    <Container maxWidth='xl' className={classes.root}>
     <div className="login-background">
     <Container maxWidth="xs" className='login-form'>
       <Grid container spacing={3}>
