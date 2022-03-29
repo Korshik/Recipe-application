@@ -64,7 +64,7 @@ function Login() {
   return (
     <Container maxWidth='xl'>
     <div className="login-background">
-    <Container maxWidth="xs" className={classes.root}>
+    <Container maxWidth="xs" className='login-form'>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography className="login-header" variant="h6">Login</Typography>

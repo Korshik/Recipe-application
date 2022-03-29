@@ -42,7 +42,6 @@ const App = () => {
         key={recipe.recipe.label}
         title={recipe.recipe.label} 
         image={recipe.recipe.image}
-        mealType={recipe.recipe.mealType}
         ingredients={recipe.recipe.ingredients}
         />  
       )
