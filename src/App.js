@@ -40,7 +40,6 @@ function App() {
     <div className={classes.root}>
       <AppBar className="app-bar" position="static" style={ {backgroundColor: 'rgba(81,80,79,1)'}}>
         <Toolbar >
-         
           <div className={classes.rightToolbar}>
             <Button color="inherit" component={Link} to="/">
               Home
