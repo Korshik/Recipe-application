@@ -6,11 +6,8 @@ import {
   
 } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
-import "./App.css";
 import Routes from "./routes/Routes";
 import useAuth from "./hooks/useAuth";
-import './App.css';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {

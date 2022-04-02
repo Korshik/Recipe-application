@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
+
 import { AuthContext } from "../../contexts/AuthContext";
 import api from "../../services/api";
 
@@ -10,12 +11,6 @@ function AuthProvider(props) {
 
   const setToken = useCallback((tokenData) => {
     setTokenData(tokenData);
-
-    if (tokenData) {
-      Cookies.set("auth-token", tokenData);
-    } else {
-      Cookies.remove("auth-token");
-    }
   }, []);
 
   const logOut = useCallback(() => {
@@ -24,7 +19,7 @@ function AuthProvider(props) {
   }, [setToken]);
 
   const loadData = useCallback(async () => {
-    const tokenData = Cookies.get("auth-token");
+    const tokenData = JSON.parse(localStorage.getItem("auth-token"));
     setTokenData(tokenData);
 
     try {

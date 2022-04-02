@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import style from './recipe.module.css';
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Button} from '../favorites/index.js'
+// import {Button} from '../favorites/index.js'
 const Recipe = ({title, image, ingredients }) => {
     const getRecipe = () => {
         return (
@@ -24,7 +24,7 @@ const Recipe = ({title, image, ingredients }) => {
                 <div className={`cont_modal ${isOpen ? "cont_modal_active" : ""}`}>
                     <div className='cont_photo'>
                         <div className='cont_img_back'><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
-                        <Button></Button>
+                        {/* <Button></Button> */}
                         </div>
                         
                         <div className='cont_detalles'>   
