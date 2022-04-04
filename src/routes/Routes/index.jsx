@@ -7,7 +7,7 @@ import NotFound from "../../pages/NotFound";
 import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
-import App from '../../Recipes/App'
+import App from '../../components/recipeCard/App'
 import {
   CircularProgress,
   makeStyles,

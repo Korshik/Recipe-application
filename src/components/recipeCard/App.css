@@ -1,0 +1,307 @@
+.recipe_main_container{
+  top: auto;
+  margin-top: 60px;
+  margin-right: 15px;
+  margin-left: 15px;
+  }
+
+
+.App {
+  min-height: 600vh;
+  background-image: url('./images/vegetables-set-left-black-slate.jpg') ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.search-form {
+  min-height:10vh ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 47, 47, 0.4);
+}
+.search-bar {
+  width: 50%;
+  border: 3px solid rgb(167, 160, 160);
+  padding: 10px;
+  margin-right: 0px;
+}
+.search-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-left: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto, sans-serif';
+  font-weight: 400;
+  color:#550b0b;
+  text-align: center;
+  transition: all 0.15s;
+  background-color:#ffffff;
+  border: 3px solid rgb(167, 160, 160);
+}
+.search-button:hover{
+  color:#ffffff;
+  border-color: hsl(0, 27%, 24%);
+  color: #b65858;
+}
+.search-button:active{
+  color:#fffefe;
+  border-color: #BBBBBB;
+}
+* {
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  
+  }
+  .cont_principal {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+  }
+
+  .recipe_container_modal {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; 
+    transition-delay: 0.7s;
+    -webkit-transition-delay: 0.7s;
+    -o-transition-delay: 0.7s;
+    transition-delay: 0.7s;
+  }
+  
+  .recipe_container_image {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    background-color: rgb(49, 47, 47, 0.7);
+    border-radius:9px;
+    top: -20px;
+    float: left;
+    z-index: 2;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    transition: all 0.5s; 
+    box-shadow: 1px 1px 20px -5px rgba(104, 46, 46, 0.5);  
+  }
+  
+  .recipe_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 9px ;
+  }
+  .recipe_image > img {
+    width: 100%;
+    opacity: 0.9;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    transition: all 1s;
+  }
+  
+  .recipe_image:hover > img {
+    transform: scale(1.5);
+  }
+  
+  .recipe_text_container {
+    position: absolute;
+    width: 0px;
+    top: 0px;
+    left: 290px;
+    margin-left: 10px;
+    height: 400px;
+    float: left; 
+    border-radius:5px ;
+    z-index: 3;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbf9f9+28,e8eaed+100 */
+    background: rgb(251,249,249); /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  rgba(251,249,249,1) 28%, rgba(232,234,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  rgba(251,249,249,1) 28%,rgba(232,234,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  rgba(251,249,249,1) 28%,rgba(232,234,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf9f9', endColorstr='#e8eaed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; 
+    transition-delay: 0.7s;
+    -webkit-transition-delay: 0.7s;
+    -o-transition-delay: 0.7s;
+    transition-delay: 0.7s;
+  }
+  
+  .recipe_image > h3 {
+    margin-top: 16px;
+    color: #fff;
+    font-size: 20px;
+    position:relative;
+  }
+  
+  .recipe_image > p {
+    position: relative;
+    color: #fff;
+    width: 80%;
+    text-align:center;
+    padding-top:1%;
+    font-size: 14px;
+  }
+  
+  /* ---------------- Css Tabs -------- */
+  
+  .recipe_hidden_header {
+    position: relative;
+    float: left;
+    width: 410px;
+    height: 60px;
+    border-bottom: 3px solid #EDEDEC;
+  }
+  
+  .recipe_hidden_header > ul {
+    width: 300px;
+    background-color: #eee;
+  }
+  
+  .recipe_hidden_header > ul > li {
+    position: relative;
+    float: left;
+    width: 50%;
+    list-style: none;
+  }
+  
+  .recipe_hidden_header > ul > li > a {
+    border-top: 7px solid #ED346C;
+    position: relative;
+    display: block;
+    float: left;
+    padding-top: 15px;
+    color: #241C3E;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+  .cont_tabs > ul > li:first-child > a
+  {
+    border-top: 0px;
+    margin-top: 8px;
+    color: #9A96A4;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    transition: all 0.2s;
+  }
+  
+  .recipe_hidden_header > ul > li:first-child > a:hover {
+    border-top: 7px solid #ED346C;
+    padding-top: 15px;
+    color: #241C3E;
+   margin-top: 0px;
+  }
+  
+  .cont_btn_open_dets {
+    position: absolute;
+    right: -15px;
+    top: 35%;
+  }
+  .cont_btn_open_dets  > a {
+    display: block;
+    padding-top: -5px;
+    width: 30px;
+    height: 30px;
+    background-color: #ED2460;
+    border-radius:50% ;
+    color: #fff;
+    box-shadow: 0px 0px 20px -2px rgba(237, 36, 96, 1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    transition: all 0.5s;
+    transform: rotate(180deg);
+  
+  }
+  .cont_btn{
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 2px;
+}
+  
+  .cont_preparation {
+    padding-top: 20px;
+
+  }
+  
+  .cont_btn_open_dets  > a > i {
+    margin-top: 4px;
+  }
+  
+  .hidden_header_text {
+    position: relative;
+    float: left;
+    margin:10px 0px ;
+     width: 410px;
+  }
+  .hidden_header_text > p {
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 40px;
+    text-align: left;
+    color: #36354E;
+  }
+  .recipe_hidden_info > p {
+    margin: 0px 0px;
+    margin-left: 50px;
+    border-left: 2px solid #E3E3E3; 
+    font-size: 14px;
+    padding: 15px 0px;
+    padding-left: 20px;
+    text-align: left;
+    padding-right: 15px;
+    color: #565656;
+  }
+  
+  .recipe_hidden_container {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .recipe_container_modal_active > .recipe_text_container  > .cont_btn_open_dets > a {
+    transform: rotate(0deg);
+  }
+  .recipe_container_modal_active > .recipe_text_container{
+    width: 410px;
+    top: -10px;
+    height: 377px;
+    left: 285px;
+    z-index: 1;
+    box-shadow: 15px 20px  70px  -5px  rgba(0,0,0,0.2);
+    }
+  .recipe_container_modal_active {
+  width: 700px;  
+  }
+  
+  .recipe_container_modal_active > .recipe_container_image {
+  box-shadow: 25px 10px 70px -5px rgba(0,0,0,0.3);  
+  }
