@@ -46,12 +46,15 @@ function App() {
             (auth.user ? (
               <>
                 <Button color="inherit" component={Link} to="/Recipes">Recipes</Button>
+                
                 <Button color="inherit" component={Link} to="/profile">
+                
                   {auth.user.firstName} {auth.user.lastName}
                 </Button>
                 <Button color="inherit" onClick={onLogOut}>
                   Log out
                 </Button>
+                <Button color="inherit" component={Link} to="/Favourites">Favourites</Button>
               </>
             ) : (
               <>

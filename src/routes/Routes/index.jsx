@@ -7,13 +7,16 @@ import NotFound from "../../pages/NotFound";
 import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
-import App from '../../components/recipeCard/App'
+import App from '../../containers/recipeCard/App';
+// import Favorites from "../../containers/favorites/favoriteItem";
 import {
   CircularProgress,
   makeStyles,
   Container,
   Grid,
 } from "@material-ui/core";
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,8 +40,11 @@ function AppRoutes() {
         }
       />
       <Route path="/Recipes" element={<App />}>
-        
+     
       </Route>
+      {/* <Route path="/Favorites" element={<Favorites/>}>
+
+      </Route> */}
       <Route
         path="/login"
         element={

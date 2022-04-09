@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from './App.css'
 // import { styled } from "@material-ui/core";
 import styled from 'styled-components';
+// import { Button } from "../favourites/favourites.js";
 
-// import {Button} from '../favorites/index.js';
 
 const StyledCard = styled.div`
 top: auto;
@@ -32,11 +32,11 @@ const Recipe = ({title, image, ingredients }) => {
     const [isOpen, setIsOpen] = useState();
     
     return(
-            <StyledCard div className={'recipe_main_container'}>
+            < StyledCard className={'recipe_main_container'}>
                 <div className={`recipe_container_modal ${isOpen ? "recipe_container_modal_active" : ""}`}>
                     <div className={'recipe_container_image'}>
                         <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
-                        {/* <Button></Button> */}
+                        {/* <Button className={'favourite_btn'}></Button> */}
                         </div>
                     </div>
                     <div className={'recipe_text_container'}>
@@ -52,3 +52,4 @@ const Recipe = ({title, image, ingredients }) => {
     );
 }
 export default Recipe;
+export   {StyledCard};

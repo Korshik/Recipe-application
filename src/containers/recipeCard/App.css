@@ -7,7 +7,8 @@
 
 
 .App {
-  min-height: 600vh;
+  height: auto;
+  /* min-height: 600vh; */
   background-image: url('./images/vegetables-set-left-black-slate.jpg') ;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -58,7 +59,8 @@
   
   }
   .cont_principal {
-    position: absolute;
+    position: relative;
+   height: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

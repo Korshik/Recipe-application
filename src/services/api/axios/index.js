@@ -1,5 +1,5 @@
 import axios from "axios";
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 const axiosInstance = axios.create({
   baseURL: "http://nestjs-boilerplate-test.herokuapp.com/api",
@@ -7,10 +7,10 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const authToken = localStorage.getItem("auth-token");
+    const authToken = Cookies.get("auth-token");
 
     if (authToken) {
-      config.headers.authorization = `Bearer` + localStorage.getItem('auth-token');
+      config.headers.authorization = `Bearer ${authToken}`;
     }
 
     return config;
