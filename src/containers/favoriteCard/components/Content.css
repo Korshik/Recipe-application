@@ -1,0 +1,8 @@
+.cont_principal {
+    position: relative;
+   height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+  }

@@ -8,13 +8,13 @@ import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
 import App from '../../containers/recipeCard/App';
-// import Favorites from "../../containers/favorites/favoriteItem";
 import {
   CircularProgress,
   makeStyles,
   Container,
   Grid,
 } from "@material-ui/core";
+import Content from "../../containers/favoriteCard/components/Content";
 
 
 
@@ -42,9 +42,9 @@ function AppRoutes() {
       <Route path="/Recipes" element={<App />}>
      
       </Route>
-      {/* <Route path="/Favorites" element={<Favorites/>}>
+      <Route path="/Content" element={<Content/>}>
 
-      </Route> */}
+      </Route>
       <Route
         path="/login"
         element={

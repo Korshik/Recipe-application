@@ -1,0 +1,9 @@
+.show-alert {
+    position: fixed;
+    z-index: 100;
+    right: 60px;
+    top: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}

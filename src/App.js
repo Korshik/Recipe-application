@@ -8,7 +8,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Routes from "./routes/Routes";
 import useAuth from "./hooks/useAuth";
-
+import FavoritesIcon from './containers/favoriteCard/components/FavoritesIcon'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -54,7 +54,7 @@ function App() {
                 <Button color="inherit" onClick={onLogOut}>
                   Log out
                 </Button>
-                <Button color="inherit" component={Link} to="/Favourites">Favourites</Button>
+                <Button className="favorites-bookmark" component={Link} to="/Favorites"><FavoritesIcon/></Button>
               </>
             ) : (
               <>

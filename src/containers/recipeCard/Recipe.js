@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 import React, {useState} from "react";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from './App.css'
 // import { styled } from "@material-ui/core";
 import styled from 'styled-components';
-// import { Button } from "../favourites/favourites.js";
 
 
 const StyledCard = styled.div`
@@ -14,9 +14,12 @@ margin-right: 15px;
 margin-left: 15px;
 }`
 
-const Recipe = ({title, image, ingredients }) => {
+const Recipe = ({title, image, ingredients}, props, item) => {
+    const  {appendToCart}  = props;
+    
     
     const getRecipe = () => {
+        
         return (
           <React.Fragment>
             <div className={'recipe_hidden_header'}>
@@ -36,7 +39,7 @@ const Recipe = ({title, image, ingredients }) => {
                 <div className={`recipe_container_modal ${isOpen ? "recipe_container_modal_active" : ""}`}>
                     <div className={'recipe_container_image'}>
                         <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
-                        {/* <Button className={'favourite_btn'}></Button> */}
+                        <button className='favourite_btn' onClick={() => appendToCart (item, 1)}>+</button>
                         </div>
                     </div>
                     <div className={'recipe_text_container'}>
