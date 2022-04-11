@@ -8,7 +8,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Routes from "./routes/Routes";
 import useAuth from "./hooks/useAuth";
-import FavoritesIcon from './containers/favoriteCard/components/FavoritesIcon'
+import FavoritesIcon from './containers/favoriteCard/components/FavoritesIcon';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

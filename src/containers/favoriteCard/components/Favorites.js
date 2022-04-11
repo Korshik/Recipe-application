@@ -3,10 +3,10 @@ import FavoritesIcon from "./FavoritesIcon";
 import App from "../../recipeCard/App";
 import FavList from './FavList';
 import ShowAlert from "./ShowAlert";
-import "./Content.css";
+import "./Favorites.css";
 
 
-export default function Content() {
+export default function Favorites() {
     const [cartItems, setCartItems] = useState([]);
     const [showCart, setShowCart] = useState(false); // модальное окно
     const [showAlert, setShowAlert] = useState(null);

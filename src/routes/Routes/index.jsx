@@ -14,7 +14,7 @@ import {
   Container,
   Grid,
 } from "@material-ui/core";
-import Content from "../../containers/favoriteCard/components/Content";
+import Favorites from '../../containers/favoriteCard/components/Favorites';
 
 
 
@@ -42,7 +42,7 @@ function AppRoutes() {
       <Route path="/Recipes" element={<App />}>
      
       </Route>
-      <Route path="/Content" element={<Content/>}>
+      <Route path="/Favorites" element={<Favorites/>}>
 
       </Route>
       <Route
