@@ -7,7 +7,7 @@ import NotFound from "../../pages/NotFound";
 import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
-import App from '../../containers/recipeCard/App';
+import RecipeList from '../../containers/recipeCard/RecipeList';
 import {
   CircularProgress,
   makeStyles,
@@ -15,6 +15,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import Favorites from '../../containers/favoriteCard/components/Favorites';
+import {useState} from "react";
 
 
 
@@ -28,6 +29,31 @@ function AppRoutes() {
   const classes = useStyles();
   const auth = useAuth();
 
+  const [favorites, setFavorites] = useState([]);
+  const addToFavorites = (item, quantity = 1) => {
+    // нужно проверить, нет ли уже такого рецепта в избранном
+    const itemIndex = favorites.findIndex(value => value.id === item.id);
+    if (itemIndex < 0) { // такого рецепта еще нет
+      const newItem = {
+        ...item,
+        quantity: quantity
+      };
+      setFavorites([...favorites, newItem]);
+    } else { // такой рецепт уже есть
+      const newItem = {
+        ...favorites[itemIndex],
+        quantity: favorites[itemIndex].quantity + quantity
+      };
+      const newCart = favorites.slice(); // копия массива cartItems
+      newCart.splice(itemIndex, 1, newItem);
+      setFavorites(newCart);
+    }
+  };
+  const removeFromFavorites = (id) => {
+    const newCart = favorites.filter(item => item.id !== id);
+    setFavorites(newCart);
+  };
+
   return auth.isLoaded ? (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -39,10 +65,10 @@ function AppRoutes() {
           </PrivateRoute>
         }
       />
-      <Route path="/Recipes" element={<App />}>
+      <Route path="/Recipes" element={<RecipeList favorites={null} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}>
      
       </Route>
-      <Route path="/Favorites" element={<Favorites/>}>
+      <Route path="/Favorites" element={<Favorites favorites={favorites} addToFavorites={addToFavorites} removeFromFavorites={addToFavorites} />}>
 
       </Route>
       <Route

@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
 
-const App = () => {
+const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
   const APP_ID = '33102f2e';
   const APP_KEY = 'ce09c92abe9b4daf8687c4a072c1f632';
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, Setquery] = useState('Salad');
-
+  const [query, setQuery] = useState('Salad');
   useEffect(() => {
     getRecipes();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,7 +24,7 @@ const App = () => {
   };
   const getSearch = e => {
     e.preventDefault();
-    Setquery(search);
+    setQuery(search);
     setSearch('');
   }
   return(
@@ -37,12 +36,17 @@ const App = () => {
       
       <div className='cont_principal'>
        
-      {recipes.map(recipe =>(
+      {recipes
+        .filter((recipe) => !favorites || favorites.some(({id}) => recipe.recipe.uri === id))
+        .map((recipe, index) => (
         <Recipe 
-        key={recipe.recipe.label}
+        key={index}
+        id={recipe.recipe.uri}
         title={recipe.recipe.label} 
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}
+        addToFavorites={addToFavorites}
+        removeFromFavorites={removeFromFavorites}
         />  
       )
          )}
@@ -51,4 +55,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default RecipeList;
