@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
 
-const RecipeList = ({addToFavorites, removeFromFavorites, favorites, isFavorite}) => {
+const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
   const APP_ID = '33102f2e';
   const APP_KEY = 'ce09c92abe9b4daf8687c4a072c1f632';
   const [recipes, setRecipes] = useState([]);
