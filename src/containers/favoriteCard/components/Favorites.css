@@ -1,8 +1,40 @@
 .cont_principal {
     position: relative;
-   height: auto;
+ 
+   width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   
   }
+  .container{
+    position: relative;
+ 
+   width: 100%;
+  }
+  
+  .material-icons {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    }
+    .material-icons:hover {
+    opacity: 1;
+    }
+    .material-icons:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+    }
+    .material-icons:before {
+    transform: rotate(45deg);
+    }
+    .material-icons:after {
+    transform: rotate(-45deg);
+    }

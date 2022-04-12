@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.css';
 
-const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
+const RecipeList = ({addToFavorites, removeFromFavorites, favorites, isFavorite}) => {
   const APP_ID = '33102f2e';
   const APP_KEY = 'ce09c92abe9b4daf8687c4a072c1f632';
   const [recipes, setRecipes] = useState([]);
@@ -34,7 +34,7 @@ const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
         <button className='search-button' type='submit'>Search</button>
       </form>
       
-      <div className='cont_principal'>
+      <div className='cont_'>
        
       {recipes
         .filter((recipe) => !favorites || favorites.some(({id}) => recipe.recipe.uri === id))
@@ -47,6 +47,7 @@ const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
         ingredients={recipe.recipe.ingredients}
         addToFavorites={addToFavorites}
         removeFromFavorites={removeFromFavorites}
+        isFavorite={true}
         />  
       )
          )}

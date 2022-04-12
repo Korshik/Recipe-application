@@ -1,5 +1,7 @@
+.container-btn{
+ position: sticky;
+}
 .favourite_btn {
-  position:initial;
   margin-left: 75%;
   background-color: #ed2460;
   border-radius: 50px;
@@ -24,6 +26,7 @@
   }
 
 .recipe_main_container{
+  display: inline-block;
   top: auto;
   margin-top: 60px;
   margin-right: 15px;
@@ -33,7 +36,7 @@
 
 .App {
   height: auto;
-  /* min-height: 600vh; */
+  min-height: 600vh;
   background-image: url('./images/vegetables-set-left-black-slate.jpg') ;
   background-repeat: no-repeat;
   background-attachment: fixed;
