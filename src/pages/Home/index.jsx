@@ -1,5 +1,5 @@
 import { Grid, makeStyles, Container, Typography } from "@material-ui/core";
-import './style.css';
+import './style.scss';
  
 const useStyles = makeStyles((theme) => ({
   root: {

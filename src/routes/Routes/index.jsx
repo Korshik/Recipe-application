@@ -52,6 +52,7 @@ function AppRoutes() {
   const removeFromFavorites = (id) => {
     const newCart = favorites.filter(item => item.id !== id);
     setFavorites(newCart);
+   
   };
 
   return auth.isLoaded ? (

@@ -16,7 +16,7 @@
     "axios": "^0.26.1",
     "expo-font": "^10.0.5",
     "get-google-fonts": "^1.2.2",
-    "js-cookie": "^3.0.1",
+    "node-sass": "6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.28.1",
@@ -51,6 +51,9 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^4.1.0"
+    "babel-plugin-module-resolver": "^4.1.0",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.72.0"
   }
 }

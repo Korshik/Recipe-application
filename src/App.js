@@ -55,7 +55,7 @@ function App() {
                 <Button color="inherit" onClick={onLogOut}>
                   Log out
                 </Button>
-                <Button className="favorites-bookmark" component={Link} to="/Favorites"><FavoritesIcon/></Button>
+                <Button className="-bookmark" component={Link} to="/Favorites"><FavoritesIcon/></Button>
               </>
             ) : (
               <>

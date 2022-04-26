@@ -12,7 +12,7 @@ import validationSchema from "./validation";
 import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
 import { useCallback, useEffect, useState } from "react";
-import './style.css'
+import './style.scss'
 
 
 

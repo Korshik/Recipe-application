@@ -1,7 +1,7 @@
 import React from "react";
 import {faBookmark} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './FavoritesIcon.css'
+import './FavoritesIcon.scss'
 export default function FavoritesIcon (props) {
     return (
         <div className="favorites-icon" onClick={props.toggleShow}>

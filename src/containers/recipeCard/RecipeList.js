@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
-import './App.css';
+import './App.scss';
 
 const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
   const APP_ID = '33102f2e';
@@ -47,7 +47,8 @@ const RecipeList = ({addToFavorites, removeFromFavorites, favorites}) => {
         ingredients={recipe.recipe.ingredients}
         addToFavorites={addToFavorites}
         removeFromFavorites={removeFromFavorites}
-        isFavorite={true}
+        isFavorite={false}
+
         />  
       )
          )}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FavoritesIcon from "./FavoritesIcon";
 import RecipeList from "../../recipeCard/RecipeList";
-import "./Favorites.css";
+import "./Favorites.scss";
 
 
 export default function Favorites({addToFavorites, removeFromFavorites, favorites, isFavorite}) {

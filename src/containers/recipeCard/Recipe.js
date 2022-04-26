@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import style from './App.css'
+import style from './App.scss'
 // import { styled } from "@material-ui/core";
 import styled from 'styled-components';
 

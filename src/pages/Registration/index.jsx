@@ -13,7 +13,7 @@ import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import './style.css'
+import './style.scss'
 
 const useStyles = makeStyles((theme) => ({
   root: {
