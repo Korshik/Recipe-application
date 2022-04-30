@@ -14,7 +14,6 @@ margin-left: 15px;
 }`
 
 const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavorites, isFavorite}) => {
-
     const getRecipe = () => {
         
         return (
@@ -39,7 +38,7 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
                         <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
                         { isFavorite
                         ?
-                        <button className='favourite_btn' onClick={() => removeFromFavorites ({id},-1) }>-</button>
+                        <button className='favourite_btn' onClick={() => removeFromFavorites (id) }>-</button>
                         :
                         <button className='favourite_btn' onClick={() => addToFavorites ({id}, 1) }>+</button>
                         }

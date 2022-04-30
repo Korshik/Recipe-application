@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe'
 import './App.scss';
 
-const RecipeList = ({addToFavorites, removeFromFavorites, favorites, isFavorite}) => {
+const RecipeList = ({addToFavorites, removeFromFavorites, favorites, showOnlyFavorites}) => {
+
   const APP_ID = '33102f2e';
   const APP_KEY = 'ce09c92abe9b4daf8687c4a072c1f632';
   const [recipes, setRecipes] = useState([]);
+
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('Salad');
   useEffect(() => {
@@ -37,7 +39,7 @@ const RecipeList = ({addToFavorites, removeFromFavorites, favorites, isFavorite}
       <div className='cont_'>
        
       {recipes
-        .filter((recipe) => !favorites || favorites.some(({id}) => recipe.recipe.uri === id))
+        .filter((recipe) => !showOnlyFavorites || favorites.some(({id}) => recipe.recipe.uri === id))
         .map((recipe, index) => (
         <Recipe 
         key={index}
@@ -47,7 +49,7 @@ const RecipeList = ({addToFavorites, removeFromFavorites, favorites, isFavorite}
         ingredients={recipe.recipe.ingredients}
         addToFavorites={addToFavorites}
         removeFromFavorites={removeFromFavorites}
-        isFavorite={isFavorite}
+        isFavorite={favorites.some(({id}) => recipe.recipe.uri === id)}
 
         />  
       )
