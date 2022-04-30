@@ -13,16 +13,16 @@ export default function Favorites({addToFavorites, removeFromFavorites, favorite
     return (
         <main className="container">
             <FavoritesIcon length={favorites.length} toggleShow={toggleShow} />
-            <RecipeList addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites} favorites={favorites} isFavorite={isFavorite}/>
+            <RecipeList addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites} favorites={favorites} isFavorite={isFavorite}
+             />
             {showCart ? (
-            <Favorites item ={favorites} toggleShow={toggleShow} removeFromFavorites={removeFromFavorites} 
+            <Favorites item={favorites} toggleShow={toggleShow} removeFromFavorites={removeFromFavorites} />
                 
-            />
-            
              ) : (
                  null
              )
              
-             }        </main>
+             }        
+             </main>
     );
 }

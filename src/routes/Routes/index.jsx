@@ -4,30 +4,15 @@ import Login from "../../pages/Login";
 import Registration from "../../pages/Registration";
 import Profile from "../../pages/Profile";
 import NotFound from "../../pages/NotFound";
-import useAuth from "../../hooks/useAuth";
 import PrivateRoute from "../components/PrivateRoute";
 import GuestRoute from "../components/GuestRoute";
 import RecipeList from '../../containers/recipeCard/RecipeList';
-import {
-  CircularProgress,
-  makeStyles,
-  Container,
-  Grid,
-} from "@material-ui/core";
 import Favorites from '../../containers/favoriteCard/components/Favorites';
 import {useState} from "react";
 
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(3),
-  },
-}));
-
 function AppRoutes() {
-  const classes = useStyles();
-  const auth = useAuth();
+  
 
   const [favorites, setFavorites] = useState([]);
   const addToFavorites = (item, quantity = 1) => {
@@ -55,7 +40,7 @@ function AppRoutes() {
    
   };
 
-  return auth.isLoaded ? (
+  return  (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route
@@ -69,7 +54,7 @@ function AppRoutes() {
       <Route path="/Recipes" element={<RecipeList favorites={null} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}>
      
       </Route>
-      <Route path="/Favorites" element={<Favorites favorites={favorites} addToFavorites={addToFavorites} removeFromFavorites={addToFavorites} />}>
+      <Route path="/Favorites" element={<Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />}>
 
       </Route>
       <Route
@@ -92,15 +77,8 @@ function AppRoutes() {
       <Route path="/not-found-404" element={<NotFound />} />
       <Route path="*" element={<Navigate to="/not-found-404" />} />
     </Routes>
-  ) : (
-    <Container maxWidth="md" className={classes.root}>
-      <Grid container spacing={3} alignItems="center" justifyContent="center">
-        <Grid item>
-          <CircularProgress color="inherit" />
-        </Grid>
-      </Grid>
-    </Container>
-  );
+  ) 
+  
 }
 
 export default AppRoutes;

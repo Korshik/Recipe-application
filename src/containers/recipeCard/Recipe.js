@@ -6,7 +6,6 @@ import style from './App.scss'
 // import { styled } from "@material-ui/core";
 import styled from 'styled-components';
 
-
 const StyledCard = styled.div`
 top: auto;
 margin-top: 60px;
@@ -15,7 +14,7 @@ margin-left: 15px;
 }`
 
 const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavorites, isFavorite}) => {
-    
+
     const getRecipe = () => {
         
         return (
@@ -32,7 +31,7 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
     }
     const [isOpen, setIsOpen] = useState();
     
-   
+    
     return(
             < StyledCard className={'recipe_main_container'}>
                 <div className={`recipe_container_modal ${isOpen ? "recipe_container_modal_active" : ""}`}>
@@ -40,11 +39,10 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
                         <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
                         { isFavorite
                         ?
-                        <button className='favourite_btn' onClick={() => removeFromFavorites ({id},-1) }>-</button>
+                        <button className='favourite_btn' onClick={() => this.removeFromFavorites ({id},-1) }>-</button>
                         :
-                        <button className='favourite_btn' onClick={() => addToFavorites({id}, 1) }>+</button>
+                        <button className='favourite_btn' onClick={() => this.addToFavorites ({id}, 1) }>+</button>
                         }
-                        
                         </div>
                     </div>
                     <div className={'recipe_text_container'}>
