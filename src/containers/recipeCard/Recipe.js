@@ -23,8 +23,8 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
                 <p className={'hidden_header_text'}>Preparation</p>
             </div>
                 <div className={'recipe_hidden_info'}>
-                    {ingredients.map(ingredient => (
-                        <p>{ingredient.text}</p>))}
+                    {ingredients.map((ingredient, index) => (
+                        <p key={index}>{ingredient.text}</p>))}
                 </div>
           </React.Fragment>  
         )
@@ -39,9 +39,9 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
                         <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
                         { isFavorite
                         ?
-                        <button className='favourite_btn' onClick={() => this.removeFromFavorites ({id},-1) }>-</button>
+                        <button className='favourite_btn' onClick={() => removeFromFavorites ({id},-1) }>-</button>
                         :
-                        <button className='favourite_btn' onClick={() => this.addToFavorites ({id}, 1) }>+</button>
+                        <button className='favourite_btn' onClick={() => addToFavorites ({id}, 1) }>+</button>
                         }
                         </div>
                     </div>
