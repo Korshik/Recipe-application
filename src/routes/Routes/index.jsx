@@ -54,7 +54,7 @@ function AppRoutes() {
       <Route path="/Recipes" element={<RecipeList favorites={null} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites}/>}>
      
       </Route>
-      <Route path="/Favorites" element={<Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />}>
+      <Route path="/Favorites" element={<Favorites favorites={favorites} addToFavorites={addToFavorites} removeFromFavorites={removeFromFavorites} />}>
 
       </Route>
       <Route
