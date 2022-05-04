@@ -2,7 +2,9 @@
  position: sticky;
 }
 .favourite_btn {
-  margin-left: 75%;
+  position:relative;
+  margin-left: 82%;
+  margin-top: 100;
   background-color: #ed2460;
   border-radius: 50px;
   box-shadow: rgb(150, 162, 154) 0 -20px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -33,7 +35,10 @@
   margin-left: 15px;
   }
 
-
+.recipe_container_btn{
+  position: relative;
+  margin-top: 117%;
+}
 .App {
   height: auto;
   min-height: 600vh;
@@ -124,7 +129,7 @@
     transition: all 0.5s; 
     box-shadow: 1px 1px 20px -5px rgba(104, 46, 46, 0.5);  
   }
-  
+ 
   .recipe_image {
     position: absolute;
     width: 100%;
@@ -175,6 +180,7 @@
     color: #fff;
     font-size: 20px;
     position:relative;
+    padding-top: -1%;
   }
   
   .recipe_image > p {

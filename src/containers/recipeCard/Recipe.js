@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from './App.scss'
-// import { styled } from "@material-ui/core";
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
@@ -32,28 +31,30 @@ const Recipe = ({title, image, ingredients, id, addToFavorites, removeFromFavori
     
     
     return(
-            < StyledCard className={'recipe_main_container'}>
-                <div className={`recipe_container_modal ${isOpen ? "recipe_container_modal_active" : ""}`}>
-                    <div className={'recipe_container_image'}>
-                        <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3>{title}</h3>
-                        { isFavorite
-                        ?
-                        <button className='favourite_btn' onClick={() => removeFromFavorites (id) }>-</button>
-                        :
-                        <button className='favourite_btn' onClick={() => addToFavorites ({id}, 1) }>+</button>
-                        }
+        < StyledCard className={'recipe_main_container'}>
+            <div className={`recipe_container_modal ${isOpen ? "recipe_container_modal_active" : ""}`}>
+                <div className={'recipe_container_image'}>
+                    <div className={'recipe_image'}><img className={style.image} src={image} alt=""></img><h3 className='recipe_title'>{title}</h3>
                         </div>
-                    </div>
+                        <div className='recipe_container_btn'>
+                            { isFavorite
+                            ?
+                            <button className='favourite_btn' onClick={() => removeFromFavorites (id) }>-</button>
+                            :
+                            <button className='favourite_btn' onClick={() => addToFavorites ({id}, 1) }>+</button>
+                            }
+                            </div>       
+                </div>
                     <div className={'recipe_text_container'}>
                         <div className={'recipe_hidden_container'}>
-                        {getRecipe()}
-                        </div>
+                            {getRecipe()}
+                                </div>
                         <div className='cont_btn_open_dets' onClick={() => {setIsOpen(!isOpen)}} >            
-                        <a href="#e"> <div className="cont_btn"> <FontAwesomeIcon icon={faAngleLeft}  /></div></a>
+                            <a href="#e"> <div className="cont_btn"> <FontAwesomeIcon icon={faAngleLeft}  /></div></a>
                         </div>   
                     </div>
-                </div>
-            </StyledCard>
+            </div>
+        </StyledCard>
     );
 }
 export default Recipe;
