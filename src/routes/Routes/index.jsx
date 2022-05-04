@@ -16,20 +16,19 @@ function AppRoutes() {
 
   const [favorites, setFavorites] = useState([]);
   const addToFavorites = (item, quantity = 1) => {
-    // нужно проверить, нет ли уже такого рецепта в избранном
     const itemIndex = favorites.findIndex(value => value.id === item.id);
-    if (itemIndex < 0) { // такого рецепта еще нет
+    if (itemIndex < 0) { 
       const newItem = {
         ...item,
         quantity: quantity
       };
       setFavorites([...favorites, newItem]);
-    } else { // такой рецепт уже есть
+    } else { 
       const newItem = {
         ...favorites[itemIndex],
         quantity: favorites[itemIndex].quantity + quantity
       };
-      const newCart = favorites.slice(); // копия массива cartItems
+      const newCart = favorites.slice(); 
       newCart.splice(itemIndex, 1, newItem);
       setFavorites(newCart);
     }
