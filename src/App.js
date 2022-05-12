@@ -38,7 +38,7 @@ function App() {
   return (
     <div className={classes.root}>
       <Typography>
-      <AppBar className="app-bar" position="static" style={ {backgroundColor: 'rgba(81,80,79,1)'}}>
+      <AppBar className="app-bar" position="static" style={ {backgroundColor: 'rgba(81,80,79, .6)'}}>
         <Toolbar variant="body">
           <div className={classes.rightToolbar}>
             <Button variant="body2" color="inherit" component={Link} to="/">
