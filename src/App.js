@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Routes from "./routes/Routes";
 import useAuth from "./hooks/useAuth";
 import FavoritesIcon from './containers/favoriteCard/components/FavoritesIcon';
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,33 +37,34 @@ function App() {
 
   return (
     <div className={classes.root}>
+      <Typography>
       <AppBar className="app-bar" position="static" style={ {backgroundColor: 'rgba(81,80,79,1)'}}>
-        <Toolbar >
+        <Toolbar variant="body">
           <div className={classes.rightToolbar}>
-            <Button color="inherit" component={Link} to="/">
+            <Button variant="body2" color="inherit" component={Link} to="/">
               Home
             </Button>
           </div>
           {auth.isLoaded &&
             (auth.user ? (
               <>
-                <Button color="inherit" component={Link} to="/Recipes">Recipes</Button>
+                <Button variant="body2" color="inherit" component={Link} to="/Recipes">Recipes</Button>
                 
-                <Button color="inherit" component={Link} to="/profile">
+                <Button variant="body2" color="inherit" component={Link} to="/profile">
                 
                   {auth.user.firstName} {auth.user.lastName}
                 </Button>
-                <Button color="inherit" onClick={onLogOut}>
+                <Button variant="body2" color="inherit" onClick={onLogOut}>
                   Log out
                 </Button>
                 <Button className="-bookmark" component={Link} to="/Favorites"><FavoritesIcon/></Button>
               </>
             ) : (
               <>
-                <Button color="inherit" component={Link} to="/login">
+                <Button variant="body2" color="inherit" component={Link} to="/login">
                   Login
                 </Button>
-                <Button color="inherit" component={Link} to="/registration">
+                <Button variant="body2" color="inherit" component={Link} to="/registration">
                   Registration
                 </Button>
               </>
@@ -71,6 +73,7 @@ function App() {
       </AppBar>
 
       <Routes />
+      </Typography>
     </div>
   );
 }

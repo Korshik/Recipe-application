@@ -7,13 +7,19 @@ import App from "./App";
 import AuthProvider from "./providers/AuthProvider";
 import reportWebVitals from "./reportWebVitals";
 
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import theme from './fonts/theme.jsx'
+
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router>
-        <App />
-      </Router>
-    </AuthProvider>
+    <ThemeProvider theme={ theme }>
+      <AuthProvider>
+        <Router>
+         <App />
+        </Router>
+     </AuthProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

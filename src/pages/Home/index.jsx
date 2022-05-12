@@ -20,7 +20,7 @@ function Home() {
     <div className="home-background">
       <Grid className="home-container" container spacing={3} >
         <Grid className="home-slogan-container" item lg={12}>
-          <Typography className="home-slogan-header" variant="h2" >
+          <Typography className="home-slogan-header" variant="h1" >
           Cooking is for the soul
           </Typography>
           <Typography className="home-slogan-text" variant="body1" >

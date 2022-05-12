@@ -1,11 +1,5 @@
-@font-face {
-    font-family: 'Dancing Script';
-    src: url('../../fonts/Dancing_Script/static/DancingScript-Regular.ttf') format('ttf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
- .home-background {
+
+.home-background {
     background-image: url(../Home/images/homeImage.jpg);
     background-position: center;
     background-size: cover;
@@ -19,7 +13,8 @@
 }
 
 .home-slogan-header{
-    font-family: 'Dancing Script';
+    font-family: '';
+    font-style: normal;
     font-weight: normal;
     width: auto;
     padding-top: 70px;
@@ -30,7 +25,8 @@
     
 }
 .home-slogan-text{
-    font-family: 'Dancing Script';
+    font-family: 'Montserrat';
+    font-size: 70px;
     width: auto;
     padding-top: 100px;
     padding-left: 40%;
